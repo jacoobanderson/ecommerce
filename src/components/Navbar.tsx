@@ -1,5 +1,7 @@
 import { BellIcon, MenuIcon, XIcon, ShoppingCartIcon } from '@heroicons/react/outline';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import ShoppingCart from './ShoppingCart';
 
 
 interface CurrentProps {
@@ -8,6 +10,11 @@ interface CurrentProps {
 
 
 const Navbar = ({ current }: CurrentProps) => {
+  const [shoppingCart, setShoppingCart] = useState<Boolean>(false)
+
+  const toggleShoppingCart = () => {
+      setShoppingCart(!shoppingCart)
+  }
   return (
       <div className='flex text-gray-800 justify-between'>
           {/* Desktop version */}
@@ -21,9 +28,11 @@ const Navbar = ({ current }: CurrentProps) => {
           <div className='flex sm:hidden justify-center items-center m-5 h-12'>
               <MenuIcon className='h-8 w-8 mx-6' />
           </div>
-          <div className='flex justify-center items-center m-5 h-12'>
+          <div onClick={toggleShoppingCart} className='flex justify-center items-center m-5 h-12'>
               <ShoppingCartIcon className='h-8 w-8 mx-6'/>
           </div>
+
+          {shoppingCart ? <ShoppingCart /> : null}
       </div>
     
   )
