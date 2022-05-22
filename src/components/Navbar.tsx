@@ -16,7 +16,7 @@ const Navbar = ({ current }: CurrentProps) => {
       setShoppingCart(!shoppingCart)
   }
   return (
-      <div className='flex text-gray-800 justify-between'>
+      <div className='flex text-gray-800 justify-between top-0 sticky z-10 bg-[#e9ded6] opacity-95'>
           {/* Desktop version */}
           <div className='hidden sm:flex m-5 h-12 justify-center items-center'>
               <Link className={current === 'Home' ? 'border-b border-solid border-gray-800 mx-6' : 'mx-6'} to='/'>Home</Link>
