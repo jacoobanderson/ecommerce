@@ -5,7 +5,7 @@ import Home from './pages/Home';
 
 function App() {
   return (
-    <div className="bg-[#e9ded6] font-basis font-thin h-screen">
+    <div className="bg-[#e9ded6] font-basis font-thin">
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<Home />}/>
